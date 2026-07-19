@@ -1,0 +1,4 @@
+.uploader { display:flex; align-items:center; gap:14px; margin-top:24px; background:white; border:1px dashed #8da097; border-radius:9px; padding:13px 16px; cursor:pointer; }
+.uploader input { max-width:220px; }
+.uploader span { font-size:12px; color:var(--muted); letter-spacing:0; }
+.download { text-decoration:none; display:inline-block; }

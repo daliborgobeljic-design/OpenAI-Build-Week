@@ -1,0 +1,2 @@
+# Codex and GPT-5.6
+Codex established the reduced architecture, threat boundaries, domain rules, fixtures, UI, test suite and submission documentation in the primary task. GPT-5.6 is a runtime product dependency for grounded extraction, impact explanation, and incident drafting. Prompts and strict schemas are use-case-specific; outputs remain suggestions, cite existing graph/source IDs, and expose missing information.

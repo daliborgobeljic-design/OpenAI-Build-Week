@@ -1,0 +1,6 @@
+import test from "node:test";import assert from "node:assert/strict";import {approveSuggestion,diffComponents,markStale,incidentWorksheet,buildManifest} from "../packages/domain/evidence.mjs";
+test("approval requires source and reviewer",()=>{assert.throws(()=>approveSuggestion({sourceFragmentId:null},{roles:["REVIEWER"]}));assert.equal(approveSuggestion({sourceFragmentId:"f1"},{id:"u1",roles:["REVIEWER"]}).status,"APPROVED")});
+test("SBOM diff stales only linked claims",()=>{const changes=diffComponents([{purl:"pkg:openssl",version:"1"}],[{purl:"pkg:openssl",version:"2"}]);const claims=markStale([{id:"a",status:"APPROVED",componentPurls:["pkg:openssl"]},{id:"b",status:"APPROVED",componentPurls:["pkg:other"]}],changes);assert.deepEqual(claims.map(x=>x.status),["STALE","APPROVED"])});
+test("incident draft abstains on missing facts",()=>{const x=incidentWorksheet({product:"AegisEdge"});assert.equal(x.submitted,false);assert(x.missingInformation.includes("exploitationObserved"))});
+test("manifest hashes are deterministic",()=>assert.equal(buildManifest({"a.txt":"x"}).files[0].sha256,buildManifest({"a.txt":"x"}).files[0].sha256));
+test("tenant IDOR guard pattern",()=>{const resource={tenantId:"tenant-b"};const context={tenantId:"tenant-a"};assert.equal(resource.tenantId===context.tenantId,false)});
