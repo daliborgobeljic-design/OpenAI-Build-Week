@@ -15,7 +15,6 @@ export const incidentCases={
 
 export function requireIdentity(request:Request):Identity|null{
  const email=request.headers.get("oai-authenticated-user-email");if(email)return{actorId:email,tenantId:"aegis-labs"};
- const smokeToken=process.env.CRA_LIVE_SMOKE_TOKEN;if(smokeToken&&request.headers.get("x-cra-live-smoke-token")==smokeToken)return{actorId:"live-smoke-runner",tenantId:"aegis-labs"};
  const url=new URL(request.url);if((url.hostname==="localhost"||url.hostname==="127.0.0.1")&&request.headers.get("x-cra-demo-user")==="aegis-labs-judge")return{actorId:"demo-reviewer",tenantId:"aegis-labs"};
  return null;
 }
