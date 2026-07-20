@@ -1,2 +1,11 @@
 import { test, expect } from "@playwright/test";
-test("upload rejects a spoofed PDF before persistence",async({page})=>{await page.goto("/");await page.getByRole("button",{name:"Approve claim"}).click();await page.getByLabel("Upload evidence PDF or JSON").setInputFiles({name:"spoof.pdf",mimeType:"application/pdf",buffer:Buffer.from("not a pdf")});await expect(page.getByText(/signature|Only PDF|Upload failed/i)).toBeVisible()});
+
+test("upload rejects a spoofed PDF before persistence", async ({ request }) => {
+  const response = await request.post("/api/v1/artifacts", {
+    multipart: {
+      file: { name: "spoof.pdf", mimeType: "application/pdf", buffer: Buffer.from("not a pdf") },
+    },
+  });
+  expect(response.status()).toBe(415);
+  await expect(response.json()).resolves.toMatchObject({ error: expect.stringMatching(/signature/i) });
+});
