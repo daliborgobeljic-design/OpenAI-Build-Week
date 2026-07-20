@@ -4,7 +4,7 @@ import { runStructured } from "@/packages/ai/responses.mjs";
 
 export type Identity={actorId:string;tenantId:"aegis-labs"};
 export const sourceFragments={
- "architecture-v2.3:p4:p2":{artifactLabel:"architecture-v2.3.pdf",text:"All administrative traffic is protected using mutual TLS 1.3. Device identities are provisioned during manufacturing and rotated every 90 days. Failed authentication attempts are rate limited and recorded."}
+ "architecture-v2.3:p4:p2":{artifactLabel:"aegisedge-architecture-v2.3.pdf",text:"All administrative traffic is protected using mutual TLS 1.3. Device identities are provisioned during manufacturing and rotated every 90 days. Failed authentication attempts are rate limited and recorded."}
 } as const;
 export const impactCases={
  "sbom-2.3-2.4":{changedComponent:{id:"pkg:openssl",from:"3.0.12",to:"3.0.14"},staleNodeIds:["claim-secure-admin","claim-crypto-update"],currentNodeIds:["claim-access-logging"]}
