@@ -3,6 +3,13 @@ import { test, expect } from "@playwright/test";
 const model = "gpt-5.6-sol";
 
 test("grounded review to stale impact, incident and dossier downloads", async ({ page }) => {
+  await page.route("**/api/v1/artifacts", (route) => route.fulfill({
+    status: 201,
+    contentType: "application/json",
+    body: JSON.stringify({
+      artifact: { id: "artifact-mock-e2e", name: "architecture-v2.3.pdf", sha256: "0123456789abcdef", bytes: 1024, status: "STORED" },
+    }),
+  }));
   await page.route("**/api/v1/ai/evidence", (route) => route.fulfill({
     status: 200,
     contentType: "application/json",
