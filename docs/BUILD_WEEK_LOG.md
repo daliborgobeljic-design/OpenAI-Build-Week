@@ -44,4 +44,8 @@
 - production build: PASS;
 - deterministic demo reset: PASS.
 
-Final public deployment, clean-browser live smoke, replacement narrated YouTube upload, and Devpost final preview remain the external completion steps.
+- Sites checkpoint v4 deployed commit `6ff44f5a5af826d924f6c18aaf284a1b4ecd4cd9` with environment revision 5.
+- A clean browser completed all three public live GPT-5.6 routes, separate approval, and both downloads.
+- A 1920x1080 H.264/AAC English narrated MP4 was recorded from the live deployment and verified at 164.701 seconds.
+
+The narrated video is publicly discoverable through YouTube oEmbed at https://www.youtube.com/watch?v=npGYuF5sQwQ. The Devpost final preview remains the last external completion step.

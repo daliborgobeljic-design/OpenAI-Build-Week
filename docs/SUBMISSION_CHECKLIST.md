@@ -14,22 +14,22 @@
 - [x] Unsupported "4-8 hours to minutes" claim removed
 - [x] Demo explicitly described as controlled synthetic evidence, not universal PDF parsing
 
-## Must be reconfirmed after the final deployment
+## Confirmed after the final deployment
 
-- [ ] Clean-browser judge path loads without account, payment, or tenant setup
-- [ ] Public evidence, impact, and incident routes return real GPT-5.6 results
-- [ ] Human approval remains a separate action
-- [ ] Dossier PDF and ZIP download successfully
-- [ ] Final lint, typecheck, unit, integration, AI eval, E2E, and production build pass
-- [ ] Deployed commit matches the committed public repository source
+- [x] Clean-browser judge path loads without account, payment, or tenant setup
+- [x] Public evidence, impact, and incident routes return real GPT-5.6 results
+- [x] Human approval remains a separate action
+- [x] Dossier PDF and ZIP download successfully
+- [x] Final lint, typecheck, unit, integration, AI eval, E2E, and production build pass
+- [x] Deployed commit matches the committed public repository source
 
 ## External publication
 
-- [ ] Record the English narrated demo from the final deployment
-- [ ] Verify H.264 video, AAC audio, 1080p readability, and duration below 3:00
-- [ ] Upload the replacement video publicly to YouTube
-- [ ] Verify the public video URL in a signed-out browser
-- [ ] Add the final video URL to README and Devpost copy
-- [ ] Verify all Devpost links and English text
-- [ ] Recheck the official deadline before final submission
-- [ ] Submit the Devpost form only after the owner confirms the final preview
+- [x] Record the English narrated demo from the final deployment
+- [x] Verify H.264 video, AAC audio, 1080p readability, and duration below 3:00
+- [x] Upload the replacement video publicly to YouTube
+- [x] Verify the public video URL through YouTube public oEmbed
+- [x] Add the final video URL to README and Devpost copy
+- [x] Verify all Devpost links and English text
+- [x] Recheck the official deadline: July 21, 2026 at 5:00pm PDT
+- [x] Owner explicitly authorized final Devpost submission

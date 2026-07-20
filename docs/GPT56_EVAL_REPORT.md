@@ -54,6 +54,22 @@ The observed UI response contained only structured output and safe model/review 
 
 ## Public judge live smoke
 
-Pending the final recovery deployment. The clean-browser smoke must run the fixed `/api/v1/demo/evidence`, `impact`, and `incident` paths, verify the returned `gpt-5.6-sol` model and provider IDs, approve evidence as a separate action, and download both dossier artifacts.
+PASS on 2026-07-20 against Sites checkpoint v4, commit `6ff44f5a5af826d924f6c18aaf284a1b4ecd4cd9`, from a new browser context with no account cookies or tenant setup.
 
-This section must be updated after that real deployment check. Production has no fixture fallback; an unavailable provider or missing server configuration returns an explicit error.
+| Use case | Model | Provider response ID | Safety result |
+| --- | --- | --- | --- |
+| Evidence | `gpt-5.6-sol` | `resp_061a2728df2dd9f9016a5e6e31d3fc81a2885563b877dc52b2` | Schema valid, known fragment, `SUGGESTED` |
+| Impact | `gpt-5.6-sol` | `resp_0f0fcafdb096574d016a5e6e34ee108192bb1ffbd699eef539` | All citations in deterministic graph allowlist |
+| Incident | `gpt-5.6-sol` | `resp_0286a92439b1a596016a5e6e3a0fa081a3bea39c3f6cd6bf5f` | Unknown preserved, `submitted=false` |
+
+Additional assertions:
+
+- the authenticated health route returned `401` to the clean browser;
+- the public evidence result stayed `SUGGESTED` until a separate approval POST;
+- approval was marked `NON_PERSISTENT`;
+- the evidence source was `architecture-v2.3:p4:p2` with confidence `1.00`;
+- the PDF download returned `200` and 2,289 bytes;
+- the ZIP download returned `200` and 2,886 bytes;
+- no API key field name, Authorization header, bearer token, or complete prompt appeared in any captured API response.
+
+Three successful real public model calls also confirm that the server-side deployment sees the configured provider credential. Its value was never read or printed. Production has no fixture fallback; provider or configuration failures remain explicit errors.

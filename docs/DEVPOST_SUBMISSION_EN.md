@@ -69,7 +69,7 @@ OpenAI GPT-5.6, OpenAI Responses API, Structured Outputs, Codex, ChatGPT Sites, 
 - Live application: https://cra-evidence-os-build-week.perapericmika.chatgpt.site
 - Source: https://github.com/daliborgobeljic-design/OpenAI-Build-Week
 - License: MIT
-- Video: add the replacement public YouTube URL after upload
+- Video: https://www.youtube.com/watch?v=npGYuF5sQwQ
 
 ## Judge instructions
 

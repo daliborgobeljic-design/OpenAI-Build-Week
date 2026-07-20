@@ -1,6 +1,6 @@
 # CRA Evidence OS
 
-[Live application](https://cra-evidence-os-build-week.perapericmika.chatgpt.site) | [Public repository](https://github.com/daliborgobeljic-design/OpenAI-Build-Week)
+[Live application](https://cra-evidence-os-build-week.perapericmika.chatgpt.site) | [Narrated demo](https://www.youtube.com/watch?v=npGYuF5sQwQ) | [Public repository](https://github.com/daliborgobeljic-design/OpenAI-Build-Week)
 
 OpenAI Build Week Work & Productivity entry: a traceable evidence workflow for EU Cyber Resilience Act preparation. It turns a controlled synthetic product document and SBOM delta into grounded GPT-5.6 suggestions, explicit human decisions, a change-aware Evidence Graph, an incident worksheet, and a draft Annex VII package.
 
@@ -113,7 +113,6 @@ See [docs/CODEX_AND_GPT56.md](docs/CODEX_AND_GPT56.md), [docs/DEVPOST_SUBMISSION
 
 - Source: https://github.com/daliborgobeljic-design/OpenAI-Build-Week
 - Live demo: https://cra-evidence-os-build-week.perapericmika.chatgpt.site
+- Narrated demo: https://www.youtube.com/watch?v=npGYuF5sQwQ
 - License: MIT
 - Track: Work & Productivity
-
-The replacement narrated video URL will be added after its public YouTube upload.
